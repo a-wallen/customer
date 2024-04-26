@@ -10,6 +10,10 @@ class Customer with _$Customer {
     required String domain,
     required String email,
     required String linkedIn,
+    String? firstName,
+    String? lastName,
+    String? companyName,
+    String? phone,
     @Default({}) Map<String, dynamic> extra,
   }) = _Customer;
 
@@ -21,6 +25,10 @@ class Customer with _$Customer {
       domain: json['domain'] as String,
       email: json['email'] as String,
       linkedIn: json['linkedIn'] as String,
+      firstName: json['firstName'] as String?,
+      lastName: json['lastName'] as String?,
+      companyName: json['companyName'] as String?,
+      phone: json['phone'] as String?,
       // exclude domain, email, and linkedIn from extra
       extra: Map<String, dynamic>.from(json)
         ..removeWhere(
@@ -29,6 +37,20 @@ class Customer with _$Customer {
         ),
     );
   }
+
+  /// The list of mandatory keys for this object
+  static List<String> mandatory = [
+    'domain',
+    'email',
+    'linkedIn',
+  ];
+
+  static List<String> optional = [
+    'firstName',
+    'lastName',
+    'companyName',
+    'phone',
+  ];
 
   /// To JSON
   Map<String, dynamic> toJson() {
@@ -43,9 +65,10 @@ class Customer with _$Customer {
   /// Validates json before conversion and returns the first missing field
   /// or null if all fields are present.
   static String? validate(Map<String, dynamic> json) {
-    if (json['domain'] == null) return 'domain';
-    if (json['email'] == null) return 'email';
-    if (json['linkedIn'] == null) return 'linkedIn';
+    for (final key in mandatory) {
+      if (!json.containsKey(key)) return key;
+    }
+
     return null;
   }
 }

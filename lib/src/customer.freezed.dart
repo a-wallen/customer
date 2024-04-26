@@ -19,6 +19,10 @@ mixin _$Customer {
   String get domain => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get linkedIn => throw _privateConstructorUsedError;
+  String? get firstName => throw _privateConstructorUsedError;
+  String? get lastName => throw _privateConstructorUsedError;
+  String? get companyName => throw _privateConstructorUsedError;
+  String? get phone => throw _privateConstructorUsedError;
   Map<String, dynamic> get extra => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -35,6 +39,10 @@ abstract class $CustomerCopyWith<$Res> {
       {String domain,
       String email,
       String linkedIn,
+      String? firstName,
+      String? lastName,
+      String? companyName,
+      String? phone,
       Map<String, dynamic> extra});
 }
 
@@ -54,6 +62,10 @@ class _$CustomerCopyWithImpl<$Res, $Val extends Customer>
     Object? domain = null,
     Object? email = null,
     Object? linkedIn = null,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
+    Object? companyName = freezed,
+    Object? phone = freezed,
     Object? extra = null,
   }) {
     return _then(_value.copyWith(
@@ -69,6 +81,22 @@ class _$CustomerCopyWithImpl<$Res, $Val extends Customer>
           ? _value.linkedIn
           : linkedIn // ignore: cast_nullable_to_non_nullable
               as String,
+      firstName: freezed == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastName: freezed == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      companyName: freezed == companyName
+          ? _value.companyName
+          : companyName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
       extra: null == extra
           ? _value.extra
           : extra // ignore: cast_nullable_to_non_nullable
@@ -89,6 +117,10 @@ abstract class _$$CustomerImplCopyWith<$Res>
       {String domain,
       String email,
       String linkedIn,
+      String? firstName,
+      String? lastName,
+      String? companyName,
+      String? phone,
       Map<String, dynamic> extra});
 }
 
@@ -106,6 +138,10 @@ class __$$CustomerImplCopyWithImpl<$Res>
     Object? domain = null,
     Object? email = null,
     Object? linkedIn = null,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
+    Object? companyName = freezed,
+    Object? phone = freezed,
     Object? extra = null,
   }) {
     return _then(_$CustomerImpl(
@@ -121,6 +157,22 @@ class __$$CustomerImplCopyWithImpl<$Res>
           ? _value.linkedIn
           : linkedIn // ignore: cast_nullable_to_non_nullable
               as String,
+      firstName: freezed == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastName: freezed == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      companyName: freezed == companyName
+          ? _value.companyName
+          : companyName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
       extra: null == extra
           ? _value._extra
           : extra // ignore: cast_nullable_to_non_nullable
@@ -136,6 +188,10 @@ class _$CustomerImpl extends _Customer {
       {required this.domain,
       required this.email,
       required this.linkedIn,
+      this.firstName,
+      this.lastName,
+      this.companyName,
+      this.phone,
       final Map<String, dynamic> extra = const {}})
       : _extra = extra,
         super._();
@@ -146,6 +202,14 @@ class _$CustomerImpl extends _Customer {
   final String email;
   @override
   final String linkedIn;
+  @override
+  final String? firstName;
+  @override
+  final String? lastName;
+  @override
+  final String? companyName;
+  @override
+  final String? phone;
   final Map<String, dynamic> _extra;
   @override
   @JsonKey()
@@ -157,7 +221,7 @@ class _$CustomerImpl extends _Customer {
 
   @override
   String toString() {
-    return 'Customer(domain: $domain, email: $email, linkedIn: $linkedIn, extra: $extra)';
+    return 'Customer(domain: $domain, email: $email, linkedIn: $linkedIn, firstName: $firstName, lastName: $lastName, companyName: $companyName, phone: $phone, extra: $extra)';
   }
 
   @override
@@ -169,11 +233,26 @@ class _$CustomerImpl extends _Customer {
             (identical(other.email, email) || other.email == email) &&
             (identical(other.linkedIn, linkedIn) ||
                 other.linkedIn == linkedIn) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.companyName, companyName) ||
+                other.companyName == companyName) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
             const DeepCollectionEquality().equals(other._extra, _extra));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, domain, email, linkedIn,
+  int get hashCode => Object.hash(
+      runtimeType,
+      domain,
+      email,
+      linkedIn,
+      firstName,
+      lastName,
+      companyName,
+      phone,
       const DeepCollectionEquality().hash(_extra));
 
   @JsonKey(ignore: true)
@@ -188,6 +267,10 @@ abstract class _Customer extends Customer {
       {required final String domain,
       required final String email,
       required final String linkedIn,
+      final String? firstName,
+      final String? lastName,
+      final String? companyName,
+      final String? phone,
       final Map<String, dynamic> extra}) = _$CustomerImpl;
   const _Customer._() : super._();
 
@@ -197,6 +280,14 @@ abstract class _Customer extends Customer {
   String get email;
   @override
   String get linkedIn;
+  @override
+  String? get firstName;
+  @override
+  String? get lastName;
+  @override
+  String? get companyName;
+  @override
+  String? get phone;
   @override
   Map<String, dynamic> get extra;
   @override
