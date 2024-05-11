@@ -19,6 +19,7 @@ mixin _$Customer {
   String get domain => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get linkedIn => throw _privateConstructorUsedError;
+  String get destination => throw _privateConstructorUsedError;
   String? get firstName => throw _privateConstructorUsedError;
   String? get lastName => throw _privateConstructorUsedError;
   String? get companyName => throw _privateConstructorUsedError;
@@ -39,6 +40,7 @@ abstract class $CustomerCopyWith<$Res> {
       {String domain,
       String email,
       String linkedIn,
+      String destination,
       String? firstName,
       String? lastName,
       String? companyName,
@@ -62,6 +64,7 @@ class _$CustomerCopyWithImpl<$Res, $Val extends Customer>
     Object? domain = null,
     Object? email = null,
     Object? linkedIn = null,
+    Object? destination = null,
     Object? firstName = freezed,
     Object? lastName = freezed,
     Object? companyName = freezed,
@@ -80,6 +83,10 @@ class _$CustomerCopyWithImpl<$Res, $Val extends Customer>
       linkedIn: null == linkedIn
           ? _value.linkedIn
           : linkedIn // ignore: cast_nullable_to_non_nullable
+              as String,
+      destination: null == destination
+          ? _value.destination
+          : destination // ignore: cast_nullable_to_non_nullable
               as String,
       firstName: freezed == firstName
           ? _value.firstName
@@ -117,6 +124,7 @@ abstract class _$$CustomerImplCopyWith<$Res>
       {String domain,
       String email,
       String linkedIn,
+      String destination,
       String? firstName,
       String? lastName,
       String? companyName,
@@ -138,6 +146,7 @@ class __$$CustomerImplCopyWithImpl<$Res>
     Object? domain = null,
     Object? email = null,
     Object? linkedIn = null,
+    Object? destination = null,
     Object? firstName = freezed,
     Object? lastName = freezed,
     Object? companyName = freezed,
@@ -156,6 +165,10 @@ class __$$CustomerImplCopyWithImpl<$Res>
       linkedIn: null == linkedIn
           ? _value.linkedIn
           : linkedIn // ignore: cast_nullable_to_non_nullable
+              as String,
+      destination: null == destination
+          ? _value.destination
+          : destination // ignore: cast_nullable_to_non_nullable
               as String,
       firstName: freezed == firstName
           ? _value.firstName
@@ -188,6 +201,7 @@ class _$CustomerImpl extends _Customer {
       {required this.domain,
       required this.email,
       required this.linkedIn,
+      required this.destination,
       this.firstName,
       this.lastName,
       this.companyName,
@@ -202,6 +216,8 @@ class _$CustomerImpl extends _Customer {
   final String email;
   @override
   final String linkedIn;
+  @override
+  final String destination;
   @override
   final String? firstName;
   @override
@@ -221,7 +237,7 @@ class _$CustomerImpl extends _Customer {
 
   @override
   String toString() {
-    return 'Customer(domain: $domain, email: $email, linkedIn: $linkedIn, firstName: $firstName, lastName: $lastName, companyName: $companyName, phone: $phone, extra: $extra)';
+    return 'Customer(domain: $domain, email: $email, linkedIn: $linkedIn, destination: $destination, firstName: $firstName, lastName: $lastName, companyName: $companyName, phone: $phone, extra: $extra)';
   }
 
   @override
@@ -233,6 +249,8 @@ class _$CustomerImpl extends _Customer {
             (identical(other.email, email) || other.email == email) &&
             (identical(other.linkedIn, linkedIn) ||
                 other.linkedIn == linkedIn) &&
+            (identical(other.destination, destination) ||
+                other.destination == destination) &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
@@ -249,6 +267,7 @@ class _$CustomerImpl extends _Customer {
       domain,
       email,
       linkedIn,
+      destination,
       firstName,
       lastName,
       companyName,
@@ -267,6 +286,7 @@ abstract class _Customer extends Customer {
       {required final String domain,
       required final String email,
       required final String linkedIn,
+      required final String destination,
       final String? firstName,
       final String? lastName,
       final String? companyName,
@@ -280,6 +300,8 @@ abstract class _Customer extends Customer {
   String get email;
   @override
   String get linkedIn;
+  @override
+  String get destination;
   @override
   String? get firstName;
   @override

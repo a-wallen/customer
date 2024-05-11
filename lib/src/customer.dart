@@ -10,6 +10,7 @@ class Customer with _$Customer {
     required String domain,
     required String email,
     required String linkedIn,
+    required String destination,
     String? firstName,
     String? lastName,
     String? companyName,
@@ -25,6 +26,7 @@ class Customer with _$Customer {
       domain: json['domain'] as String,
       email: json['email'] as String,
       linkedIn: json['linkedIn'] as String,
+      destination: json['destination'] as String,
       firstName: json['firstName'] as String?,
       lastName: json['lastName'] as String?,
       companyName: json['companyName'] as String?,
@@ -43,8 +45,10 @@ class Customer with _$Customer {
     'domain',
     'email',
     'linkedIn',
+    'destination',
   ];
 
+  /// The list of optional keys for this object
   static List<String> optional = [
     'firstName',
     'lastName',
@@ -58,6 +62,7 @@ class Customer with _$Customer {
       'domain': domain,
       'email': email,
       'linkedIn': linkedIn,
+      'destination': destination,
       ...extra,
     };
   }
